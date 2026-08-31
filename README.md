@@ -1,4 +1,4 @@
-# API-Integration-Pagination
+# API-Integration-Pagination 
 
 A small Go example that fetches all GitHub repository issues updated since a given time.
 
