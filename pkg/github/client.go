@@ -18,7 +18,7 @@ func NewIssueFetcher(client *github.Client) *IssueFetcher {
 	return &IssueFetcher{client: client}
 }
 
-// FetchIssues retrieves all issues for a repository updated since a specific time.
+// FetchIssues retrieves all issues for a repository updated since a specific time. 
 func (f *IssueFetcher) FetchIssues(ctx context.Context, owner, repo string, since time.Time, perPage int) ([]*github.Issue, error) {
 	opt := &github.IssueListByRepoOptions{
 		Since: since,
@@ -37,6 +37,7 @@ func (f *IssueFetcher) FetchIssues(ctx context.Context, owner, repo string, sinc
 		if resp.NextPage == 0 {
 			break
 		}
+		
 		opt.Page = resp.NextPage
 	}
 	return allIssues, nil
